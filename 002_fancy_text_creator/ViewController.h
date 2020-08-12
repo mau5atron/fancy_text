@@ -8,10 +8,13 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
+@interface ViewController : UIViewController {
+	BOOL shadowState;
+}
 
 @property (weak, nonatomic) IBOutlet UILabel *mainLabel;
 @property (weak, nonatomic) IBOutlet UITextField *mainField;
+@property (weak, nonatomic) IBOutlet UIButton *addShadowBtn;
 - (IBAction) updateMainLabel:(id)sender;
 - (IBAction) redFontColor:(id)sender;
 - (IBAction) blueFontColor:(id)sender;

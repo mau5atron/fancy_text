@@ -17,6 +17,7 @@
 - (void)viewDidLoad {
 	[super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+	shadowState = false;
 }
 
 
@@ -67,9 +68,17 @@
 
 // #effects
 - (IBAction) addShadow:(id)sender {
-	self.mainLabel.layer.shadowOpacity = 0.5;
-	self.mainLabel.layer.shadowColor = [[UIColor blackColor] CGColor];
-	self.mainLabel.layer.shadowOffset = CGSizeMake(2.0, 2.0);
+	if ( shadowState == true ){
+		self.mainLabel.layer.shadowOpacity = 0.0;
+		[self.addShadowBtn setTitle:@"Add Shadow" forState:UIControlStateNormal];
+		shadowState = false;
+	} else {
+		self.mainLabel.layer.shadowOpacity = 0.5;
+		self.mainLabel.layer.shadowColor = [[UIColor blackColor] CGColor];
+		self.mainLabel.layer.shadowOffset = CGSizeMake(2.0, 2.0);
+		[self.addShadowBtn setTitle:@"Remove Shadow" forState:UIControlStateNormal];
+		shadowState = true;
+	}
 }
 
 // #font sizes
@@ -85,7 +94,7 @@
 
 - (IBAction) largeFont:(id)sender {
 	UIFont *font = self.mainLabel.font;
-	self.mainLabel.font = [font fontWithSize:42.0f];
+	self.mainLabel.font = [font fontWithSize:45.0f];
 }
 
 // #functions

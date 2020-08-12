@@ -219,6 +219,7 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="addShadowBtn" destination="QZh-Nt-WaA" id="J5Q-VY-ERI"/>
                         <outlet property="mainField" destination="CVl-85-ZTd" id="tVb-XW-6BC"/>
                         <outlet property="mainLabel" destination="Wtq-ja-qjY" id="wrX-X1-3Bf"/>
                     </connections>
